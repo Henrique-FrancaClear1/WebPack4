@@ -1,5 +1,5 @@
 import Pessoa from "./pessoa";
-import './assets/css/estilo.css'
+import './assets'
 //so tem como interagir com a pasta modulos se estiver explicitamente referenciado
 //import './modulos/moduloA'
 
