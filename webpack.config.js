@@ -12,22 +12,26 @@ module.exports = {
         filename: 'principal.js',
         path: __dirname + '/public'
     },
+    devServer: {
+        contentBase: "./public",
+        port:9000,
+    },
     optimization: {
-         minimizer: [
+        minimizer: [
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true
             }),
             new OptimizeCSSAssertsPlugin({})
-         ]
+        ]
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'estilo.css'
         })
     ],
-    module:{
-        rules:[{
+    module: {
+        rules: [{
             test: /\.s?[ac]ss$/,
             use: [
                 MiniCssExtractPlugin.loader,//incompativel com style-loader
@@ -35,7 +39,7 @@ module.exports = {
                 'css-loader', // interpretar @import, url...
                 'sass-loader',
             ]
-        },{
+        }, {
             test: /\.(png|svg|jpg|gif)$/,
             use: ['file-loader']
         }]
